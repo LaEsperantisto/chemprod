@@ -1,81 +1,57 @@
-
-use std::env;
-
-use crate::cli::element;
+use clap::{Parser, Subcommand};
 
 mod cli;
+use crate::cli::element;
+
+#[derive(Parser)]
+#[command(
+    name = "chemprod",
+    version = "0.0.1",
+    about = "Chemistry CLI",
+    long_about = "A Chemistry tool for absolutely everything in chemistry: elements, formulae, equations"
+)]
+struct Cli {
+    #[command(subcommand)]
+    command: Commands,
+}
+
+#[derive(Subcommand)]
+enum Commands {
+    /// Look up an element
+    Element {
+        /// Element name or symbol
+        query: String,
+    },
+    /// Analyse a chemical formula
+    Formula {
+        /// Chemical formula (e.g. H2O)
+        formula: String,
+    },
+    /// Balance a chemical equation
+    Equation {
+        /// Chemical equation (e.g. H2 + O2 -> H2O)
+        equation: String,
+    },
+}
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let args: Vec<String> = env::args().collect();
+    let cli = Cli::parse();
 
-    if args.len() < 2 {
-        print_help();
-        return Ok(());
-    }
-
-    let command = args[1].to_lowercase();
-
-    match command.as_str() {
-        "element" => {
-            element::run(&args);
+    match &cli.command {
+        Commands::Element { query } => {
+            element::run(query);
         }
 
-        "formula" => {
-            if args.len() < 3 {
-                eprintln!("Error: missing formula.");
-                eprintln!("Usage: chemprod formula <formula>");
-                return Ok(());
-            }
-
-            let formula = &args[2];
-
+        Commands::Formula { formula } => {
             println!("Formula mode");
             println!("Input: {}", formula);
         }
 
-        "equation" => {
-            if args.len() < 3 {
-                eprintln!("Error: missing equation.");
-                eprintln!("Usage: chemprod equation <equation>");
-                return Ok(());
-            }
-
-            let equation = &args[2];
-
+        Commands::Equation { equation } => {
             println!("Equation mode");
             println!("Input: {}", equation);
-        }
-
-        "help" | "--help" | "-h" => {
-            print_help();
-        }
-
-        "version" | "--version" | "-V" => {
-            println!("chemprod 0.0.1");
-        }
-
-        _ => {
-            eprintln!("Unknown command: {}", command);
-            eprintln!();
-            print_help();
         }
     }
 
     Ok(())
-}
-
-fn print_help() {
-    println!("Chemistry CLI");
-    println!();
-    println!("Usage:");
-    println!("  chemprod element <name|symbol>");
-    println!("  chemprod formula <formula>");
-    println!("  chemprod equation <equation>");
-    println!();
-    println!("Commands:");
-    println!("  element     Look up an element");
-    println!("  formula     Analyse a chemical formula");
-    println!("  equation    Balance a chemical equation");
-    println!("  help        Show this help message");
-    println!("  version     Show the program version");
 }

@@ -30,14 +30,7 @@ pub struct ElementFile {
     pub element: Vec<Element>,
 }
 
-pub fn run(args: &[String]) {
-    if args.len() < 3 {
-                eprintln!("Error: missing element.");
-                eprintln!("Usage: chemprod element <name|symbol>");
-                return;
-            }
-
-            let input = &args[2];
+pub fn run(input: &str) {
 
             let text = include_str!("../../data/elements.toml");
             let elements: ElementFile = toml::from_str(text).unwrap();
