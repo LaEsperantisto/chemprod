@@ -16,13 +16,13 @@ impl PeriodicTable {
         let mut by_symbol = HashMap::new();
         let mut by_name = HashMap::new();
 
-        for (index, element) in file.element.iter().enumerate() {
+        for (index, element) in file.elements.iter().enumerate() {
             by_symbol.insert(element.symbol.to_lowercase(), index);
             by_name.insert(element.name.to_lowercase(), index);
         }
 
         Ok(Self {
-            elements: file.element,
+            elements: file.elements,
             by_symbol,
             by_name,
         })

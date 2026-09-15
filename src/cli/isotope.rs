@@ -1,6 +1,4 @@
-use std::str::FromStr;
-
-use crate::cli::element::{self, Element, ElementFile};
+use crate::cli::element::{Element, ElementFile, MultiIndexElementMap};
 
 #[derive(Debug)]
 pub struct Isotope<'a> {
@@ -14,7 +12,7 @@ impl Isotope<'_> {
     }
 
     pub fn neutrons(&self) -> u16 {
-        self.mass_number - self.protons()
+        self.mass_number.saturating_sub(self.protons())
     }
 
     pub fn nucleons(&self) -> u16 {
@@ -23,58 +21,65 @@ impl Isotope<'_> {
 }
 
 pub fn run(input: &str) {
-    let split: Vec<_> = input.split("-").collect();
-    let given_element = split.get(0).unwrap_or_else(|| {
-        eprintln!(
-            "Could not split {} into an element and an atomic mass",
-            input
-        );
-        &"H"
-    });
-    let mass = split.get(1).unwrap_or_else(|| {
-        eprintln!(
-            "Could not split {} into an element and an atomic mass",
-            input
-        );
-        &"H"
-    }).parse::<u8>()
-    .unwrap_or_else(|_| {
-        eprintln!(
-            "Could not split {} into an element and an atomic mass",
-            input
-        );
-        0
-    });
+    let mut parts = input.split('-').map(str::trim);
+
+    let given_element = match parts.next() {
+        Some(s) if !s.is_empty() => s,
+        _ => {
+            eprintln!("Invalid input format. Expected format like 'Carbon-14' or 'C-14'.");
+            return;
+        }
+    };
+
+    let mass: u16 = match parts.next().and_then(|m| m.parse::<u16>().ok()) {
+        Some(m) => m,
+        None => {
+            eprintln!("Could not parse isotope mass number from: '{input}'. Expected e.g. 'Carbon-14'.");
+            return;
+        }
+    };
+
     let text = include_str!("../../data/elements.toml");
     let elements: ElementFile = toml::from_str(text).unwrap();
 
-    let element = elements.element.iter().find(|element| {
-        element.name.eq_ignore_ascii_case(given_element)
-            || element.symbol.eq_ignore_ascii_case(given_element)
-    });
+    let mut map = MultiIndexElementMap::default();
+    for el in elements.elements {
+        map.insert(el);
+    }
 
-    match element {
+    // Fast lookup using symbol index first, fallback to linear search on name
+    let found = map
+        .get_by_symbol(&given_element.to_ascii_uppercase())
+        .or_else(|| {
+            map.iter().find(|e| e.1.name.eq_ignore_ascii_case(given_element)).map(|(_, element)| element)
+        });
+
+    match found {
         Some(element) => {
-            println!("Name:          {}", element.name);
-            println!("Symbol:        {}", element.symbol);
-            println!("Atomic number: {}", element.atomic_number);
-            println!("Atomic mass:   {}", mass);
-            println!("Group:         {}", {
-                if let Some(group) = element.group {
-                    group.to_string()
-                } else {
-                    "None".to_string()
-                }
-            });
-            println!("Period:        {}", element.period);
-            println!("Category:      {:?}", element.category);
-            println!("Neutron count: {}", mass.saturating_sub(element.atomic_number));
-            println!("Proton count:  {}", element.atomic_number);
-            println!("Electron count:{}", element.atomic_number);
-        }
+            let isotope = Isotope {
+                element,
+                mass_number: mass,
+            };
 
+            println!("Name:           {}", isotope.element.name);
+            println!("Symbol:         {}", isotope.element.symbol);
+            println!("Atomic number:  {}", isotope.element.atomic_number);
+            println!("Isotope Mass:   {}", isotope.mass_number);
+            println!(
+                "Group:          {}",
+                isotope
+                    .element
+                    .group
+                    .map_or_else(|| "None".to_string(), |g| g.to_string())
+            );
+            println!("Period:         {}", isotope.element.period);
+            println!("Category:       {:?}", isotope.element.category);
+            println!("Neutron count:  {}", isotope.neutrons());
+            println!("Proton count:   {}", isotope.protons());
+            println!("Electron count: {}", isotope.element.atomic_number);
+        }
         None => {
-            println!("Element not found: {}", input);
+            println!("Element not found: {}", given_element);
         }
     }
 }
