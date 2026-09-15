@@ -36,20 +36,20 @@ pub enum ElementCategory {
 
 #[derive(Debug, Deserialize)]
 pub struct ElementFile {
-    pub elements: Vec<Element>,
+    pub element: Vec<Element>,
 }
 pub fn run(input: &str) {
     let text = include_str!("../../data/elements.toml");
     let elements: ElementFile = toml::from_str(text).unwrap();
 
     let mut map = MultiIndexElementMap::default();
-    for element in elements.elements {
+    for element in elements.element {
         map.insert(element);
     }
 
     // Attempt lookup by symbol first, then fallback to searching by name
     let found = map
-        .get_by_symbol(&input.to_ascii_uppercase())
+        .get_by_symbol(input)
         .or_else(|| {
             // Case-insensitive lookup by name
             map.iter().find(|e| e.1.name.eq_ignore_ascii_case(input)).map(|(_, element)| element)

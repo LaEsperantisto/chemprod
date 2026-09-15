@@ -43,7 +43,7 @@ pub fn run(input: &str) {
     let elements: ElementFile = toml::from_str(text).unwrap();
 
     let mut map = MultiIndexElementMap::default();
-    for el in elements.elements {
+    for el in elements.element {
         map.insert(el);
     }
 
