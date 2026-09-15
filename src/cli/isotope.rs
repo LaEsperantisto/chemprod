@@ -68,7 +68,7 @@ pub fn run(input: &str) {
             });
             println!("Period:        {}", element.period);
             println!("Category:      {:?}", element.category);
-            println!("Neutron count: {}", element.atomic_number - mass);
+            println!("Neutron count: {}", mass.saturating_sub(element.atomic_number));
             println!("Proton count:  {}", element.atomic_number);
             println!("Electron count:{}", element.atomic_number);
         }
