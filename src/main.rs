@@ -27,12 +27,12 @@ enum Commands {
         /// Isotope name or symbol (e.g. carbon-14)
         query: String,
     },
-    /// Analyse a chemical formula
+    /// Analyse a chemical formula - NOT WORKING
     Formula {
         /// Chemical formula (e.g. H2O)
         formula: String,
     },
-    /// Balance a chemical equation
+    /// Balance a chemical equation - NOT WORKING
     Equation {
         /// Chemical equation (e.g. H2 + O2 -> H2O)
         equation: String,

@@ -55,7 +55,7 @@ pub fn run(input: &str) {
             println!("Category:       {:?}", element.category);
             println!(
                 "Neutron count:  {}",
-                element.atomic_mass - element.atomic_number as f64
+                element.atomic_mass as u8 - element.atomic_number
             );
             println!("Proton count:   {}", element.atomic_number);
             println!("Electron count: {}", element.atomic_number);
