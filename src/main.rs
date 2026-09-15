@@ -1,7 +1,7 @@
 use clap::{Parser, Subcommand};
 
 mod cli;
-use crate::cli::element;
+use crate::cli::{element, isotope};
 
 #[derive(Parser)]
 #[command(
@@ -22,6 +22,11 @@ enum Commands {
         /// Element name or symbol
         query: String,
     },
+    /// Look up an isotope
+    Isotope {
+        /// Isotope name or symbol (e.g. carbon-14)
+        query: String,
+    },
     /// Analyse a chemical formula
     Formula {
         /// Chemical formula (e.g. H2O)
@@ -39,7 +44,13 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     match &cli.command {
         Commands::Element { query } => {
+            println!("Element mode");
             element::run(query);
+        }
+
+        Commands::Isotope { query } => {
+            println!("Isotope mode");
+            isotope::run(query);
         }
 
         Commands::Formula { formula } => {

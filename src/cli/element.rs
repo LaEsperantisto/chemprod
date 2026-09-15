@@ -31,33 +31,38 @@ pub struct ElementFile {
 }
 
 pub fn run(input: &str) {
+    let text = include_str!("../../data/elements.toml");
+    let elements: ElementFile = toml::from_str(text).unwrap();
 
-            let text = include_str!("../../data/elements.toml");
-            let elements: ElementFile = toml::from_str(text).unwrap();
+    let element = elements.element.iter().find(|element| {
+        element.name.eq_ignore_ascii_case(input) || element.symbol.eq_ignore_ascii_case(input)
+    });
 
-            let element = elements.element.iter().find(|element| {
-                element.name.eq_ignore_ascii_case(input)
-                    || element.symbol.eq_ignore_ascii_case(input)
+    match element {
+        Some(element) => {
+            println!("Name:           {}", element.name);
+            println!("Symbol:         {}", element.symbol);
+            println!("Atomic number:  {}", element.atomic_number);
+            println!("Atomic mass:    {}", element.atomic_mass);
+            println!("Group:          {}", {
+                if let Some(group) = element.group {
+                    group.to_string()
+                } else {
+                    "None".to_string()
+                }
             });
+            println!("Period:         {}", element.period);
+            println!("Category:       {:?}", element.category);
+            println!(
+                "Neutron count:  {}",
+                element.atomic_mass - element.atomic_number as f64
+            );
+            println!("Proton count:   {}", element.atomic_number);
+            println!("Electron count: {}", element.atomic_number);
+        }
 
-            match element {
-                Some(element) => {
-                    println!("Name:          {}", element.name);
-                    println!("Symbol:        {}", element.symbol);
-                    println!("Atomic number: {}", element.atomic_number);
-                    println!("Atomic mass:   {}", element.atomic_mass);
-                    println!("Group:         {}", {
-                        if let Some(group) = element.group {
-                            group.to_string()
-                        }
-                        else { "None".to_string() }
-                    });
-                    println!("Period:        {}", element.period);
-                    println!("Category:      {:?}", element.category);
-                }
-
-                None => {
-                    println!("Element not found: {}", input);
-                }
-            }
+        None => {
+            println!("Element not found: {}", input);
+        }
+    }
 }
