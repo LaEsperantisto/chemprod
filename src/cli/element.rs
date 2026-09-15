@@ -10,14 +10,14 @@ pub struct Element {
     #[multi_index(hashed_unique)]
     pub name: String,
 
+    pub atomic_mass: f64,
+
     #[multi_index(hashed_non_unique)]
     pub group: Option<u8>,
     #[multi_index(hashed_non_unique)]
     pub period: u8,
     #[multi_index(hashed_non_unique)]
     pub category: ElementCategory,
-
-    pub atomic_mass: f64,
 }
 
 #[derive(Debug, Deserialize, Clone, Hash, Eq, PartialEq)]
