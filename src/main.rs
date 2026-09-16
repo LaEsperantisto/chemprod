@@ -1,7 +1,9 @@
-use clap::{Parser, Subcommand};
-
+mod chemistry;
 mod cli;
+
+use crate::cli::formula;
 use crate::cli::{element, isotope};
+use clap::{Parser, Subcommand};
 
 #[derive(Parser)]
 #[command(
@@ -56,6 +58,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         Commands::Formula { formula } => {
             println!("Formula mode");
             println!("Input: {}", formula);
+            formula::run(formula);
         }
 
         Commands::Equation { equation } => {

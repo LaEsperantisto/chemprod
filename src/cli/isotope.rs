@@ -34,7 +34,9 @@ pub fn run(input: &str) {
     let mass: u16 = match parts.next().and_then(|m| m.parse::<u16>().ok()) {
         Some(m) => m,
         None => {
-            eprintln!("Could not parse isotope mass number from: '{input}'. Expected e.g. 'Carbon-14'.");
+            eprintln!(
+                "Could not parse isotope mass number from: '{input}'. Expected e.g. 'Carbon-14'."
+            );
             return;
         }
     };
@@ -51,7 +53,9 @@ pub fn run(input: &str) {
     let found = map
         .get_by_symbol(&given_element.to_ascii_uppercase())
         .or_else(|| {
-            map.iter().find(|e| e.1.name.eq_ignore_ascii_case(given_element)).map(|(_, element)| element)
+            map.iter()
+                .find(|e| e.1.name.eq_ignore_ascii_case(given_element))
+                .map(|(_, element)| element)
         });
 
     match found {

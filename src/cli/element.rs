@@ -1,5 +1,5 @@
-use serde::Deserialize;
 use multi_index_map::MultiIndexMap;
+use serde::Deserialize;
 
 #[derive(MultiIndexMap, Debug, Deserialize, Clone)]
 pub struct Element {
@@ -38,6 +38,7 @@ pub enum ElementCategory {
 pub struct ElementFile {
     pub element: Vec<Element>,
 }
+
 pub fn run(input: &str) {
     let text = include_str!("../../data/elements.toml");
     let elements: ElementFile = toml::from_str(text).unwrap();
@@ -48,19 +49,19 @@ pub fn run(input: &str) {
     }
 
     // Attempt lookup by symbol first, then fallback to searching by name
-    let found = map
-        .get_by_symbol(input)
-        .or_else(|| {
-            // Case-insensitive lookup by name
-            map.iter().find(|e| e.1.name.eq_ignore_ascii_case(input)).map(|(_, element)| element)
-        });
+    let found = map.get_by_symbol(input).or_else(|| {
+        // Case-insensitive lookup by name
+        map.iter()
+            .find(|e| e.1.name.eq_ignore_ascii_case(input))
+            .map(|(_, element)| element)
+    });
 
     match found {
         Some(element) => {
             println!("Name:           {}", element.name);
             println!("Symbol:         {}", element.symbol);
             println!("Atomic number:  {}", element.atomic_number);
-            println!("Atomic mass:    {}", element.atomic_mass);
+            println!("Atomic mass:    {}", element.atomic_mass.round());
             println!(
                 "Group:          {}",
                 element
