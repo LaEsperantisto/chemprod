@@ -11,13 +11,16 @@ pub struct Element {
     pub name: String,
 
     pub atomic_mass: f64,
-
     #[multi_index(hashed_non_unique)]
     pub group: Option<u8>,
     #[multi_index(hashed_non_unique)]
     pub period: u8,
     #[multi_index(hashed_non_unique)]
     pub category: ElementCategory,
+
+    pub electronegativity: Option<f32>,
+    pub oxidation_states: Vec<i8>,
+    pub default_oxidation_state: Option<i8>,
 }
 
 #[derive(Debug, Deserialize, Clone, Hash, Eq, PartialEq)]

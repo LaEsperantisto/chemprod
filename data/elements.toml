@@ -6,6 +6,9 @@ atomic_mass = 1.008
 group = 1
 period = 1
 category = "Nonmetal"
+electronegativity = 2.20
+oxidation_states = [-1, 1]
+default_oxidation_state = 1
 
 [[element]]
 atomic_number = 2
@@ -16,6 +19,9 @@ group = 18
 period = 1
 category = "NobleGas"
 
+oxidation_states = [0]
+default_oxidation_state = 0
+
 [[element]]
 atomic_number = 3
 symbol = "Li"
@@ -24,6 +30,9 @@ atomic_mass = 6.94
 group = 1
 period = 2
 category = "AlkaliMetal"
+electronegativity = 0.98
+oxidation_states = [1]
+default_oxidation_state = 1
 
 [[element]]
 atomic_number = 4
@@ -33,6 +42,9 @@ atomic_mass = 9.0122
 group = 2
 period = 2
 category = "AlkalineEarthMetal"
+electronegativity = 1.57
+oxidation_states = [2]
+default_oxidation_state = 2
 
 [[element]]
 atomic_number = 5
@@ -42,6 +54,9 @@ atomic_mass = 10.81
 group = 13
 period = 2
 category = "Metalloid"
+electronegativity = 2.04
+oxidation_states = [1, 2, 3]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 6
@@ -51,6 +66,9 @@ atomic_mass = 12.011
 group = 14
 period = 2
 category = "Nonmetal"
+electronegativity = 2.55
+oxidation_states = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+default_oxidation_state = 4
 
 [[element]]
 atomic_number = 7
@@ -60,6 +78,9 @@ atomic_mass = 14.007
 group = 15
 period = 2
 category = "Nonmetal"
+electronegativity = 3.04
+oxidation_states = [-3, -2, -1, 1, 2, 3, 4, 5]
+default_oxidation_state = -3
 
 [[element]]
 atomic_number = 8
@@ -69,6 +90,9 @@ atomic_mass = 15.999
 group = 16
 period = 2
 category = "Nonmetal"
+electronegativity = 3.44
+oxidation_states = [-2, -1, 1, 2]
+default_oxidation_state = -2
 
 [[element]]
 atomic_number = 9
@@ -78,6 +102,9 @@ atomic_mass = 18.998
 group = 17
 period = 2
 category = "Halogen"
+electronegativity = 3.98
+oxidation_states = [-1]
+default_oxidation_state = -1
 
 [[element]]
 atomic_number = 10
@@ -88,6 +115,9 @@ group = 18
 period = 2
 category = "NobleGas"
 
+oxidation_states = [0]
+default_oxidation_state = 0
+
 [[element]]
 atomic_number = 11
 symbol = "Na"
@@ -96,6 +126,9 @@ atomic_mass = 22.990
 group = 1
 period = 3
 category = "AlkaliMetal"
+electronegativity = 0.93
+oxidation_states = [-1, 1]
+default_oxidation_state = 1
 
 [[element]]
 atomic_number = 12
@@ -105,6 +138,9 @@ atomic_mass = 24.305
 group = 2
 period = 3
 category = "AlkalineEarthMetal"
+electronegativity = 1.31
+oxidation_states = [1, 2]
+default_oxidation_state = 2
 
 [[element]]
 atomic_number = 13
@@ -114,6 +150,9 @@ atomic_mass = 26.982
 group = 13
 period = 3
 category = "PostTransitionMetal"
+electronegativity = 1.61
+oxidation_states = [1, 2, 3]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 14
@@ -123,6 +162,9 @@ atomic_mass = 28.085
 group = 14
 period = 3
 category = "Metalloid"
+electronegativity = 1.90
+oxidation_states = [-4, -3, -2, -1, 1, 2, 3, 4]
+default_oxidation_state = 4
 
 [[element]]
 atomic_number = 15
@@ -132,6 +174,9 @@ atomic_mass = 30.974
 group = 15
 period = 3
 category = "Nonmetal"
+electronegativity = 2.19
+oxidation_states = [-3, -2, -1, 1, 2, 3, 4, 5]
+default_oxidation_state = 5
 
 [[element]]
 atomic_number = 16
@@ -141,6 +186,9 @@ atomic_mass = 32.06
 group = 16
 period = 3
 category = "Nonmetal"
+electronegativity = 2.58
+oxidation_states = [-2, -1, 1, 2, 3, 4, 5, 6]
+default_oxidation_state = 6
 
 [[element]]
 atomic_number = 17
@@ -150,6 +198,9 @@ atomic_mass = 35.45
 group = 17
 period = 3
 category = "Halogen"
+electronegativity = 3.16
+oxidation_states = [-1, 1, 2, 3, 4, 5, 6, 7]
+default_oxidation_state = -1
 
 [[element]]
 atomic_number = 18
@@ -160,14 +211,20 @@ group = 18
 period = 3
 category = "NobleGas"
 
+oxidation_states = [0]
+default_oxidation_state = 0
+
 [[element]]
 atomic_number = 19
 symbol = "K"
 name = "Potassium"
-atomic_mass = 39.0983
+atomic_mass = 39.098
 group = 1
 period = 4
 category = "AlkaliMetal"
+electronegativity = 0.82
+oxidation_states = [-1, 1]
+default_oxidation_state = 1
 
 [[element]]
 atomic_number = 20
@@ -177,15 +234,21 @@ atomic_mass = 40.078
 group = 2
 period = 4
 category = "AlkalineEarthMetal"
+electronegativity = 1.00
+oxidation_states = [1, 2]
+default_oxidation_state = 2
 
 [[element]]
 atomic_number = 21
 symbol = "Sc"
 name = "Scandium"
-atomic_mass = 44.9559
+atomic_mass = 44.956
 group = 3
 period = 4
 category = "TransitionMetal"
+electronegativity = 1.36
+oxidation_states = [1, 2, 3]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 22
@@ -195,33 +258,45 @@ atomic_mass = 47.867
 group = 4
 period = 4
 category = "TransitionMetal"
+electronegativity = 1.54
+oxidation_states = [-2, -1, 1, 2, 3, 4]
+default_oxidation_state = 4
 
 [[element]]
 atomic_number = 23
 symbol = "V"
 name = "Vanadium"
-atomic_mass = 50.9415
+atomic_mass = 50.942
 group = 5
 period = 4
 category = "TransitionMetal"
+electronegativity = 1.63
+oxidation_states = [-3, -1, 1, 2, 3, 4, 5]
+default_oxidation_state = 5
 
 [[element]]
 atomic_number = 24
 symbol = "Cr"
 name = "Chromium"
-atomic_mass = 51.9961
+atomic_mass = 51.996
 group = 6
 period = 4
 category = "TransitionMetal"
+electronegativity = 1.66
+oxidation_states = [-4, -2, -1, 1, 2, 3, 4, 5, 6]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 25
 symbol = "Mn"
 name = "Manganese"
-atomic_mass = 54.9380
+atomic_mass = 54.938
 group = 7
 period = 4
 category = "TransitionMetal"
+electronegativity = 1.55
+oxidation_states = [-3, -2, -1, 1, 2, 3, 4, 5, 6, 7]
+default_oxidation_state = 2
 
 [[element]]
 atomic_number = 26
@@ -231,24 +306,33 @@ atomic_mass = 55.845
 group = 8
 period = 4
 category = "TransitionMetal"
+electronegativity = 1.83
+oxidation_states = [-4, -2, -1, 1, 2, 3, 4, 5, 6, 7]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 27
 symbol = "Co"
 name = "Cobalt"
-atomic_mass = 58.9332
+atomic_mass = 58.933
 group = 9
 period = 4
 category = "TransitionMetal"
+electronegativity = 1.88
+oxidation_states = [-3, -1, 1, 2, 3, 4, 5]
+default_oxidation_state = 2
 
 [[element]]
 atomic_number = 28
 symbol = "Ni"
 name = "Nickel"
-atomic_mass = 58.6934
+atomic_mass = 58.693
 group = 10
 period = 4
 category = "TransitionMetal"
+electronegativity = 1.91
+oxidation_states = [-2, -1, 1, 2, 3, 4]
+default_oxidation_state = 2
 
 [[element]]
 atomic_number = 29
@@ -258,6 +342,9 @@ atomic_mass = 63.546
 group = 11
 period = 4
 category = "TransitionMetal"
+electronegativity = 1.90
+oxidation_states = [-2, 1, 2, 3, 4]
+default_oxidation_state = 2
 
 [[element]]
 atomic_number = 30
@@ -267,6 +354,9 @@ atomic_mass = 65.38
 group = 12
 period = 4
 category = "TransitionMetal"
+electronegativity = 1.65
+oxidation_states = [-2, 1, 2]
+default_oxidation_state = 2
 
 [[element]]
 atomic_number = 31
@@ -276,6 +366,9 @@ atomic_mass = 69.723
 group = 13
 period = 4
 category = "PostTransitionMetal"
+electronegativity = 1.81
+oxidation_states = [-5, -4, -3, -2, -1, 1, 2, 3]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 32
@@ -285,15 +378,21 @@ atomic_mass = 72.630
 group = 14
 period = 4
 category = "Metalloid"
+electronegativity = 2.01
+oxidation_states = [-4, -3, -2, -1, 1, 2, 3, 4]
+default_oxidation_state = 4
 
 [[element]]
 atomic_number = 33
 symbol = "As"
 name = "Arsenic"
-atomic_mass = 74.9216
+atomic_mass = 74.922
 group = 15
 period = 4
 category = "Metalloid"
+electronegativity = 2.18
+oxidation_states = [-3, -2, -1, 1, 2, 3, 4, 5]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 34
@@ -303,6 +402,9 @@ atomic_mass = 78.971
 group = 16
 period = 4
 category = "Nonmetal"
+electronegativity = 2.55
+oxidation_states = [-2, -1, 1, 2, 3, 4, 5, 6]
+default_oxidation_state = 4
 
 [[element]]
 atomic_number = 35
@@ -312,6 +414,9 @@ atomic_mass = 79.904
 group = 17
 period = 4
 category = "Halogen"
+electronegativity = 2.96
+oxidation_states = [-1, 1, 3, 4, 5, 7]
+default_oxidation_state = -1
 
 [[element]]
 atomic_number = 36
@@ -321,15 +426,21 @@ atomic_mass = 83.798
 group = 18
 period = 4
 category = "NobleGas"
+electronegativity = 3.00
+oxidation_states = [0, 1, 2]
+default_oxidation_state = 0
 
 [[element]]
 atomic_number = 37
 symbol = "Rb"
 name = "Rubidium"
-atomic_mass = 85.4678
+atomic_mass = 85.468
 group = 1
 period = 5
 category = "AlkaliMetal"
+electronegativity = 0.82
+oxidation_states = [-1, 1]
+default_oxidation_state = 1
 
 [[element]]
 atomic_number = 38
@@ -339,15 +450,21 @@ atomic_mass = 87.62
 group = 2
 period = 5
 category = "AlkalineEarthMetal"
+electronegativity = 0.95
+oxidation_states = [1, 2]
+default_oxidation_state = 2
 
 [[element]]
 atomic_number = 39
 symbol = "Y"
 name = "Yttrium"
-atomic_mass = 88.9059
+atomic_mass = 88.906
 group = 3
 period = 5
 category = "TransitionMetal"
+electronegativity = 1.22
+oxidation_states = [1, 2, 3]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 40
@@ -357,15 +474,21 @@ atomic_mass = 91.224
 group = 4
 period = 5
 category = "TransitionMetal"
+electronegativity = 1.33
+oxidation_states = [-2, 1, 2, 3, 4]
+default_oxidation_state = 4
 
 [[element]]
 atomic_number = 41
 symbol = "Nb"
 name = "Niobium"
-atomic_mass = 92.9064
+atomic_mass = 92.906
 group = 5
 period = 5
 category = "TransitionMetal"
+electronegativity = 1.60
+oxidation_states = [-3, -1, 1, 2, 3, 4, 5]
+default_oxidation_state = 5
 
 [[element]]
 atomic_number = 42
@@ -375,15 +498,21 @@ atomic_mass = 95.95
 group = 6
 period = 5
 category = "TransitionMetal"
+electronegativity = 2.16
+oxidation_states = [-4, -2, -1, 1, 2, 3, 4, 5, 6]
+default_oxidation_state = 6
 
 [[element]]
 atomic_number = 43
 symbol = "Tc"
 name = "Technetium"
-atomic_mass = 98.0
+atomic_mass = 98
 group = 7
 period = 5
 category = "TransitionMetal"
+electronegativity = 1.90
+oxidation_states = [-3, -1, 1, 2, 3, 4, 5, 6, 7]
+default_oxidation_state = 7
 
 [[element]]
 atomic_number = 44
@@ -393,15 +522,21 @@ atomic_mass = 101.07
 group = 8
 period = 5
 category = "TransitionMetal"
+electronegativity = 2.20
+oxidation_states = [-4, -2, 1, 2, 3, 4, 5, 6, 7, 8]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 45
 symbol = "Rh"
 name = "Rhodium"
-atomic_mass = 102.9055
+atomic_mass = 102.91
 group = 9
 period = 5
 category = "TransitionMetal"
+electronegativity = 2.28
+oxidation_states = [-3, -1, 1, 2, 3, 4, 5, 6]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 46
@@ -411,51 +546,69 @@ atomic_mass = 106.42
 group = 10
 period = 5
 category = "TransitionMetal"
+electronegativity = 2.20
+oxidation_states = [0, 1, 2, 3, 4]
+default_oxidation_state = 2
 
 [[element]]
 atomic_number = 47
 symbol = "Ag"
 name = "Silver"
-atomic_mass = 107.8682
+atomic_mass = 107.87
 group = 11
 period = 5
 category = "TransitionMetal"
+electronegativity = 1.93
+oxidation_states = [-2, -1, 1, 2, 3]
+default_oxidation_state = 1
 
 [[element]]
 atomic_number = 48
 symbol = "Cd"
 name = "Cadmium"
-atomic_mass = 112.414
+atomic_mass = 112.41
 group = 12
 period = 5
 category = "TransitionMetal"
+electronegativity = 1.69
+oxidation_states = [-2, 1, 2]
+default_oxidation_state = 2
 
 [[element]]
 atomic_number = 49
 symbol = "In"
 name = "Indium"
-atomic_mass = 114.818
+atomic_mass = 114.82
 group = 13
 period = 5
 category = "PostTransitionMetal"
+electronegativity = 1.78
+oxidation_states = [-5, -2, -1, 1, 2, 3]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 50
 symbol = "Sn"
 name = "Tin"
-atomic_mass = 118.710
+atomic_mass = 118.71
 group = 14
 period = 5
 category = "PostTransitionMetal"
+electronegativity = 1.96
+oxidation_states = [-4, -3, -2, -1, 1, 2, 3, 4]
+default_oxidation_state = 4
 
 [[element]]
 atomic_number = 51
 symbol = "Sb"
 name = "Antimony"
-atomic_mass = 121.760
+atomic_mass = 121.76
 group = 15
 period = 5
 category = "Metalloid"
+electronegativity = 2.05
+oxidation_states = [-3, -2, -1, 1, 2, 3, 4, 5]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 52
@@ -465,87 +618,117 @@ atomic_mass = 127.60
 group = 16
 period = 5
 category = "Metalloid"
+electronegativity = 2.10
+oxidation_states = [-2, 1, 2, 3, 4, 5, 6]
+default_oxidation_state = 4
 
 [[element]]
 atomic_number = 53
 symbol = "I"
 name = "Iodine"
-atomic_mass = 126.9045
+atomic_mass = 126.90
 group = 17
 period = 5
 category = "Halogen"
+electronegativity = 2.66
+oxidation_states = [-1, 1, 3, 4, 5, 6, 7]
+default_oxidation_state = -1
 
 [[element]]
 atomic_number = 54
 symbol = "Xe"
 name = "Xenon"
-atomic_mass = 131.293
+atomic_mass = 131.29
 group = 18
 period = 5
 category = "NobleGas"
+electronegativity = 2.60
+oxidation_states = [0, 1, 2, 4, 6, 8]
+default_oxidation_state = 0
 
 [[element]]
 atomic_number = 55
 symbol = "Cs"
 name = "Caesium"
-atomic_mass = 132.9055
+atomic_mass = 132.91
 group = 1
 period = 6
 category = "AlkaliMetal"
+electronegativity = 0.79
+oxidation_states = [-1, 1]
+default_oxidation_state = 1
 
 [[element]]
 atomic_number = 56
 symbol = "Ba"
 name = "Barium"
-atomic_mass = 137.327
+atomic_mass = 137.33
 group = 2
 period = 6
 category = "AlkalineEarthMetal"
+electronegativity = 0.89
+oxidation_states = [1, 2]
+default_oxidation_state = 2
 
 [[element]]
 atomic_number = 57
 symbol = "La"
 name = "Lanthanum"
-atomic_mass = 138.9055
+atomic_mass = 138.91
 group = 3
 period = 6
 category = "Lanthanide"
+electronegativity = 1.10
+oxidation_states = [1, 2, 3]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 58
 symbol = "Ce"
 name = "Cerium"
-atomic_mass = 140.116
+atomic_mass = 140.12
 group = 3
 period = 6
 category = "Lanthanide"
+electronegativity = 1.12
+oxidation_states = [2, 3, 4]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 59
 symbol = "Pr"
 name = "Praseodymium"
-atomic_mass = 140.9077
+atomic_mass = 140.91
 group = 3
 period = 6
 category = "Lanthanide"
+electronegativity = 1.13
+oxidation_states = [2, 3, 4, 5]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 60
 symbol = "Nd"
 name = "Neodymium"
-atomic_mass = 144.242
+atomic_mass = 144.24
 group = 3
 period = 6
 category = "Lanthanide"
+electronegativity = 1.14
+oxidation_states = [2, 3, 4]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 61
 symbol = "Pm"
 name = "Promethium"
-atomic_mass = 145.0
+atomic_mass = 145
 group = 3
 period = 6
 category = "Lanthanide"
+electronegativity = 1.13
+oxidation_states = [2, 3]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 62
@@ -555,15 +738,21 @@ atomic_mass = 150.36
 group = 3
 period = 6
 category = "Lanthanide"
+electronegativity = 1.17
+oxidation_states = [2, 3]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 63
 symbol = "Eu"
 name = "Europium"
-atomic_mass = 151.964
+atomic_mass = 151.96
 group = 3
 period = 6
 category = "Lanthanide"
+electronegativity = 1.20
+oxidation_states = [2, 3]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 64
@@ -573,69 +762,93 @@ atomic_mass = 157.25
 group = 3
 period = 6
 category = "Lanthanide"
+electronegativity = 1.20
+oxidation_states = [1, 2, 3]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 65
 symbol = "Tb"
 name = "Terbium"
-atomic_mass = 158.9254
+atomic_mass = 158.93
 group = 3
 period = 6
 category = "Lanthanide"
+electronegativity = 1.20
+oxidation_states = [1, 2, 3, 4]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 66
 symbol = "Dy"
 name = "Dysprosium"
-atomic_mass = 162.500
+atomic_mass = 162.50
 group = 3
 period = 6
 category = "Lanthanide"
+electronegativity = 1.22
+oxidation_states = [2, 3, 4]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 67
 symbol = "Ho"
 name = "Holmium"
-atomic_mass = 164.9303
+atomic_mass = 164.93
 group = 3
 period = 6
 category = "Lanthanide"
+electronegativity = 1.23
+oxidation_states = [2, 3]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 68
 symbol = "Er"
 name = "Erbium"
-atomic_mass = 167.259
+atomic_mass = 167.26
 group = 3
 period = 6
 category = "Lanthanide"
+electronegativity = 1.24
+oxidation_states = [2, 3]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 69
 symbol = "Tm"
 name = "Thulium"
-atomic_mass = 168.9342
+atomic_mass = 168.93
 group = 3
 period = 6
 category = "Lanthanide"
+electronegativity = 1.25
+oxidation_states = [2, 3]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 70
 symbol = "Yb"
 name = "Ytterbium"
-atomic_mass = 173.045
+atomic_mass = 173.05
 group = 3
 period = 6
 category = "Lanthanide"
+electronegativity = 1.10
+oxidation_states = [2, 3]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 71
 symbol = "Lu"
 name = "Lutetium"
-atomic_mass = 174.9668
+atomic_mass = 174.97
 group = 3
 period = 6
 category = "Lanthanide"
+electronegativity = 1.27
+oxidation_states = [2, 3]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 72
@@ -645,15 +858,21 @@ atomic_mass = 178.49
 group = 4
 period = 6
 category = "TransitionMetal"
+electronegativity = 1.30
+oxidation_states = [-2, 1, 2, 3, 4]
+default_oxidation_state = 4
 
 [[element]]
 atomic_number = 73
 symbol = "Ta"
 name = "Tantalum"
-atomic_mass = 180.9479
+atomic_mass = 180.95
 group = 5
 period = 6
 category = "TransitionMetal"
+electronegativity = 1.50
+oxidation_states = [-3, -1, 1, 2, 3, 4, 5]
+default_oxidation_state = 5
 
 [[element]]
 atomic_number = 74
@@ -663,15 +882,21 @@ atomic_mass = 183.84
 group = 6
 period = 6
 category = "TransitionMetal"
+electronegativity = 2.36
+oxidation_states = [-4, -2, -1, 1, 2, 3, 4, 5, 6]
+default_oxidation_state = 6
 
 [[element]]
 atomic_number = 75
 symbol = "Re"
 name = "Rhenium"
-atomic_mass = 186.207
+atomic_mass = 186.21
 group = 7
 period = 6
 category = "TransitionMetal"
+electronegativity = 1.90
+oxidation_states = [-3, -1, 1, 2, 3, 4, 5, 6, 7]
+default_oxidation_state = 7
 
 [[element]]
 atomic_number = 76
@@ -681,42 +906,57 @@ atomic_mass = 190.23
 group = 8
 period = 6
 category = "TransitionMetal"
+electronegativity = 2.20
+oxidation_states = [-4, -2, -1, 1, 2, 3, 4, 5, 6, 7, 8]
+default_oxidation_state = 4
 
 [[element]]
 atomic_number = 77
 symbol = "Ir"
 name = "Iridium"
-atomic_mass = 192.217
+atomic_mass = 192.22
 group = 9
 period = 6
 category = "TransitionMetal"
+electronegativity = 2.20
+oxidation_states = [-3, -1, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+default_oxidation_state = 4
 
 [[element]]
 atomic_number = 78
 symbol = "Pt"
 name = "Platinum"
-atomic_mass = 195.084
+atomic_mass = 195.08
 group = 10
 period = 6
 category = "TransitionMetal"
+electronegativity = 2.28
+oxidation_states = [-3, -2, -1, 1, 2, 3, 4, 5, 6]
+default_oxidation_state = 4
 
 [[element]]
 atomic_number = 79
 symbol = "Au"
 name = "Gold"
-atomic_mass = 196.9666
+atomic_mass = 196.97
 group = 11
 period = 6
 category = "TransitionMetal"
+electronegativity = 2.54
+oxidation_states = [-3, -2, -1, 1, 2, 3, 5]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 80
 symbol = "Hg"
 name = "Mercury"
-atomic_mass = 200.592
+atomic_mass = 200.59
 group = 12
 period = 6
 category = "TransitionMetal"
+electronegativity = 2.00
+oxidation_states = [-2, 1, 2, 4]
+default_oxidation_state = 2
 
 [[element]]
 atomic_number = 81
@@ -726,6 +966,9 @@ atomic_mass = 204.38
 group = 13
 period = 6
 category = "PostTransitionMetal"
+electronegativity = 1.62
+oxidation_states = [-5, -2, -1, 1, 2, 3]
+default_oxidation_state = 1
 
 [[element]]
 atomic_number = 82
@@ -735,327 +978,438 @@ atomic_mass = 207.2
 group = 14
 period = 6
 category = "PostTransitionMetal"
+electronegativity = 1.87
+oxidation_states = [-4, -2, -1, 1, 2, 3, 4]
+default_oxidation_state = 2
 
 [[element]]
 atomic_number = 83
 symbol = "Bi"
 name = "Bismuth"
-atomic_mass = 208.9804
+atomic_mass = 208.98
 group = 15
 period = 6
 category = "PostTransitionMetal"
+electronegativity = 2.02
+oxidation_states = [-3, -2, -1, 1, 2, 3, 4, 5]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 84
 symbol = "Po"
 name = "Polonium"
-atomic_mass = 209.0
+atomic_mass = 209
 group = 16
 period = 6
 category = "PostTransitionMetal"
+electronegativity = 2.00
+oxidation_states = [-2, 2, 4, 6]
+default_oxidation_state = 4
 
 [[element]]
 atomic_number = 85
 symbol = "At"
 name = "Astatine"
-atomic_mass = 210.0
+atomic_mass = 210
 group = 17
 period = 6
 category = "Halogen"
+electronegativity = 2.20
+oxidation_states = [-1, 1, 3, 5, 7]
+default_oxidation_state = -1
 
 [[element]]
 atomic_number = 86
 symbol = "Rn"
 name = "Radon"
-atomic_mass = 222.0
+atomic_mass = 222
 group = 18
 period = 6
 category = "NobleGas"
+electronegativity = 2.20
+oxidation_states = [0, 2, 6]
+default_oxidation_state = 0
 
 [[element]]
 atomic_number = 87
 symbol = "Fr"
 name = "Francium"
-atomic_mass = 223.0
+atomic_mass = 223
 group = 1
 period = 7
 category = "AlkaliMetal"
+electronegativity = 0.79
+oxidation_states = [1]
+default_oxidation_state = 1
 
 [[element]]
 atomic_number = 88
 symbol = "Ra"
 name = "Radium"
-atomic_mass = 226.0
+atomic_mass = 226
 group = 2
 period = 7
 category = "AlkalineEarthMetal"
+electronegativity = 0.90
+oxidation_states = [2]
+default_oxidation_state = 2
 
 [[element]]
 atomic_number = 89
 symbol = "Ac"
 name = "Actinium"
-atomic_mass = 227.0
+atomic_mass = 227
 group = 3
 period = 7
 category = "Actinide"
+electronegativity = 1.10
+oxidation_states = [2, 3]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 90
 symbol = "Th"
 name = "Thorium"
-atomic_mass = 232.0377
+atomic_mass = 232.04
 group = 3
 period = 7
 category = "Actinide"
+electronegativity = 1.30
+oxidation_states = [1, 2, 3, 4]
+default_oxidation_state = 4
 
 [[element]]
 atomic_number = 91
 symbol = "Pa"
 name = "Protactinium"
-atomic_mass = 231.0359
+atomic_mass = 231.04
 group = 3
 period = 7
 category = "Actinide"
+electronegativity = 1.50
+oxidation_states = [3, 4, 5]
+default_oxidation_state = 5
 
 [[element]]
 atomic_number = 92
 symbol = "U"
 name = "Uranium"
-atomic_mass = 238.0289
+atomic_mass = 238.03
 group = 3
 period = 7
 category = "Actinide"
+electronegativity = 1.38
+oxidation_states = [1, 2, 3, 4, 5, 6]
+default_oxidation_state = 6
 
 [[element]]
 atomic_number = 93
 symbol = "Np"
 name = "Neptunium"
-atomic_mass = 237.0
+atomic_mass = 237
 group = 3
 period = 7
 category = "Actinide"
+electronegativity = 1.36
+oxidation_states = [3, 4, 5, 6, 7]
+default_oxidation_state = 5
 
 [[element]]
 atomic_number = 94
 symbol = "Pu"
 name = "Plutonium"
-atomic_mass = 244.0
+atomic_mass = 244
 group = 3
 period = 7
 category = "Actinide"
+electronegativity = 1.28
+oxidation_states = [3, 4, 5, 6, 7, 8]
+default_oxidation_state = 4
 
 [[element]]
 atomic_number = 95
 symbol = "Am"
 name = "Americium"
-atomic_mass = 243.0
+atomic_mass = 243
 group = 3
 period = 7
 category = "Actinide"
+electronegativity = 1.13
+oxidation_states = [2, 3, 4, 5, 6, 7]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 96
 symbol = "Cm"
 name = "Curium"
-atomic_mass = 247.0
+atomic_mass = 247
 group = 3
 period = 7
 category = "Actinide"
+electronegativity = 1.28
+oxidation_states = [3, 4, 6]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 97
 symbol = "Bk"
 name = "Berkelium"
-atomic_mass = 247.0
+atomic_mass = 247
 group = 3
 period = 7
 category = "Actinide"
+electronegativity = 1.30
+oxidation_states = [3, 4]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 98
 symbol = "Cf"
 name = "Californium"
-atomic_mass = 251.0
+atomic_mass = 251
 group = 3
 period = 7
 category = "Actinide"
+electronegativity = 1.30
+oxidation_states = [2, 3, 4]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 99
 symbol = "Es"
 name = "Einsteinium"
-atomic_mass = 252.0
+atomic_mass = 252
 group = 3
 period = 7
 category = "Actinide"
+electronegativity = 1.30
+oxidation_states = [2, 3, 4]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 100
 symbol = "Fm"
 name = "Fermium"
-atomic_mass = 257.0
+atomic_mass = 257
 group = 3
 period = 7
 category = "Actinide"
+electronegativity = 1.30
+oxidation_states = [2, 3]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 101
 symbol = "Md"
 name = "Mendelevium"
-atomic_mass = 258.0
+atomic_mass = 258
 group = 3
 period = 7
 category = "Actinide"
+electronegativity = 1.30
+oxidation_states = [2, 3]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 102
 symbol = "No"
 name = "Nobelium"
-atomic_mass = 259.0
+atomic_mass = 259
 group = 3
 period = 7
 category = "Actinide"
+electronegativity = 1.30
+oxidation_states = [2, 3]
+default_oxidation_state = 2
 
 [[element]]
 atomic_number = 103
 symbol = "Lr"
 name = "Lawrencium"
-atomic_mass = 266.0
+atomic_mass = 266
 group = 3
 period = 7
 category = "Actinide"
+electronegativity = 1.30
+oxidation_states = [3]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 104
 symbol = "Rf"
 name = "Rutherfordium"
-atomic_mass = 267.0
+atomic_mass = 267
 group = 4
 period = 7
 category = "TransitionMetal"
+
+oxidation_states = [4]
+default_oxidation_state = 4
 
 [[element]]
 atomic_number = 105
 symbol = "Db"
 name = "Dubnium"
-atomic_mass = 268.0
+atomic_mass = 268
 group = 5
 period = 7
 category = "TransitionMetal"
+
+oxidation_states = [5]
+default_oxidation_state = 5
 
 [[element]]
 atomic_number = 106
 symbol = "Sg"
 name = "Seaborgium"
-atomic_mass = 269.0
+atomic_mass = 269
 group = 6
 period = 7
 category = "TransitionMetal"
+
+oxidation_states = [6]
+default_oxidation_state = 6
 
 [[element]]
 atomic_number = 107
 symbol = "Bh"
 name = "Bohrium"
-atomic_mass = 270.0
+atomic_mass = 270
 group = 7
 period = 7
 category = "TransitionMetal"
+
+oxidation_states = [7]
+default_oxidation_state = 7
 
 [[element]]
 atomic_number = 108
 symbol = "Hs"
 name = "Hassium"
-atomic_mass = 277.0
+atomic_mass = 277
 group = 8
 period = 7
 category = "TransitionMetal"
+
+oxidation_states = [8]
+default_oxidation_state = 8
 
 [[element]]
 atomic_number = 109
 symbol = "Mt"
 name = "Meitnerium"
-atomic_mass = 278.0
+atomic_mass = 278
 group = 9
 period = 7
 category = "TransitionMetal"
+
+oxidation_states = [1, 3, 4, 8, 9]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 110
 symbol = "Ds"
 name = "Darmstadtium"
-atomic_mass = 281.0
+atomic_mass = 281
 group = 10
 period = 7
 category = "TransitionMetal"
+
+oxidation_states = [0, 2, 4, 6, 8]
+default_oxidation_state = 4
 
 [[element]]
 atomic_number = 111
 symbol = "Rg"
 name = "Roentgenium"
-atomic_mass = 282.0
+atomic_mass = 282
 group = 11
 period = 7
 category = "TransitionMetal"
+
+oxidation_states = [-1, 1, 3, 5]
+default_oxidation_state = 3
 
 [[element]]
 atomic_number = 112
 symbol = "Cn"
 name = "Copernicium"
-atomic_mass = 285.0
+atomic_mass = 285
 group = 12
 period = 7
 category = "TransitionMetal"
+
+oxidation_states = [0, 1, 2, 4]
+default_oxidation_state = 2
 
 [[element]]
 atomic_number = 113
 symbol = "Nh"
 name = "Nihonium"
-atomic_mass = 286.0
+atomic_mass = 286
 group = 13
 period = 7
 category = "PostTransitionMetal"
+
+oxidation_states = [-1, 1, 3, 5]
+default_oxidation_state = 1
 
 [[element]]
 atomic_number = 114
 symbol = "Fl"
 name = "Flerovium"
-atomic_mass = 289.0
+atomic_mass = 289
 group = 14
 period = 7
 category = "PostTransitionMetal"
+
+oxidation_states = [0, 1, 2, 4, 6]
+default_oxidation_state = 2
 
 [[element]]
 atomic_number = 115
 symbol = "Mc"
 name = "Moscovium"
-atomic_mass = 290.0
+atomic_mass = 290
 group = 15
 period = 7
 category = "PostTransitionMetal"
+
+oxidation_states = [1, 3]
+default_oxidation_state = 1
 
 [[element]]
 atomic_number = 116
 symbol = "Lv"
 name = "Livermorium"
-atomic_mass = 293.0
+atomic_mass = 293
 group = 16
 period = 7
 category = "PostTransitionMetal"
+
+oxidation_states = [-2, 2, 4]
+default_oxidation_state = 2
 
 [[element]]
 atomic_number = 117
 symbol = "Ts"
 name = "Tennessine"
-atomic_mass = 294.0
+atomic_mass = 294
 group = 17
 period = 7
 category = "Halogen"
+
+oxidation_states = [-1, 1, 3, 5]
+default_oxidation_state = 1
 
 [[element]]
 atomic_number = 118
 symbol = "Og"
 name = "Oganesson"
-atomic_mass = 294.0
+atomic_mass = 294
 group = 18
 period = 7
 category = "NobleGas"
+
+oxidation_states = [-1, 0, 1, 2, 4, 6]
+default_oxidation_state = 0

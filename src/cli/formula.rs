@@ -1,17 +1,7 @@
 use crate::{chemistry::formula::parser::Parser, cli::element::{Element, ElementFile, MultiIndexElementMap}};
 
-pub struct Formula {
-    pub elements: Vec<FormulaElement>,
-    pub charge: i32,
-}
-
-pub struct FormulaElement {
-    pub element: &'static Element,
-    pub count: u32,
-}
-
 pub fn run(formula: &str) {
-    let mut parser = Parser::new();
+    let mut parser = Parser::new(formula.to_string());
     let tree = parser.parse();
 
     let text = include_str!("../../data/elements.toml");
@@ -22,5 +12,6 @@ pub fn run(formula: &str) {
         map.insert(element);
     }
 
-    println!("{}",tree.get_mass(&map));
+    println!("Total relative mass: {}",tree.get_mass(&map));
+    println!("Overall charge: {}",tree.get_charge(&map));
 }
