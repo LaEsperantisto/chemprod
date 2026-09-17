@@ -1,7 +1,7 @@
 mod chemistry;
 mod cli;
 
-use crate::cli::formula;
+use crate::cli::{dictionary, formula};
 use crate::cli::{element, isotope};
 use clap::{Parser, Subcommand};
 use std::io::{self, Write};
@@ -40,6 +40,11 @@ enum Commands {
         /// Chemical equation (e.g. H2 + O2 -> H2O)
         equation: String,
     },
+    /// Look up terms
+    Dictionary {
+        /// Term
+        term: Vec<String>,
+    }
 }
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -73,6 +78,9 @@ fn execute_command(command: Commands) {
         Commands::Equation { equation } => {
             println!("Equation mode");
             println!("Input: {}", equation);
+        }
+        Commands::Dictionary { term } => {
+            dictionary::run(&term.join(" "));
         }
     }
 }
