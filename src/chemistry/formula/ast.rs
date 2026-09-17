@@ -1,4 +1,4 @@
-use crate::cli::element::MultiIndexElementMap;
+use crate::cli::element::{MultiIndexElementMap};
 use std::{collections::HashMap, fmt::Debug};
 
 pub trait Formula: Debug {
@@ -48,11 +48,19 @@ pub struct Symbol {
 
 impl Formula for Symbol {
     fn get_mass(&self, map: &MultiIndexElementMap) -> f64 {
-        map.get_by_symbol(&self.symbol).unwrap().atomic_mass * self.multiplier as f64
+        if let Some(element) = map.get_by_symbol(&self.symbol) {
+            element.atomic_mass * self.multiplier as f64
+        }else {
+            println!("Unexpected character: {}",self.symbol);
+            0.0
+        }
     }
 
     fn get_charge(&self, map: &MultiIndexElementMap) -> i32 {
-        let element = map.get_by_symbol(&self.symbol).unwrap();
+        let Some(element) = map.get_by_symbol(&self.symbol) else {
+            println!("Unexpected character: {}",self.symbol);
+            return 0;
+        };
         // Uses default_oxidation_state, fallback oxidation state, or 0
         let base_charge = element
             .default_oxidation_state

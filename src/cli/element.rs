@@ -23,6 +23,23 @@ pub struct Element {
     pub default_oxidation_state: Option<i8>,
 }
 
+impl Element {
+    pub fn invalid() -> Self {
+        Element {
+            atomic_mass: 0.0,
+            atomic_number: 0,
+            symbol: String::new(),
+            name: String::new(),
+            group: None,
+            period: 0,
+            category: ElementCategory::AlkaliMetal,
+            electronegativity: None,
+            oxidation_states: Vec::new(),
+            default_oxidation_state: None,
+        }
+    }
+}
+
 #[derive(Debug, Deserialize, Clone, Hash, Eq, PartialEq)]
 pub enum ElementCategory {
     AlkaliMetal,
@@ -64,7 +81,7 @@ pub fn run(input: &str) {
             println!("Name:           {}", element.name);
             println!("Symbol:         {}", element.symbol);
             println!("Atomic number:  {}", element.atomic_number);
-            println!("Atomic mass:    {}", element.atomic_mass.round());
+            println!("Atomic mass:    {}", element.atomic_mass);
             println!(
                 "Group:          {}",
                 element
@@ -79,6 +96,9 @@ pub fn run(input: &str) {
             );
             println!("Proton count:   {}", element.atomic_number);
             println!("Electron count: {}", element.atomic_number);
+            println!("Electronegativity: {}", element.electronegativity.map_or_else(|| "None".to_string(), |g| g.to_string()));
+            println!("Oxidation states: {:#?}", element.oxidation_states);
+            println!("Default oxidation state: {}", element.default_oxidation_state.map_or_else(|| "None".to_string(), |g| g.to_string()))
         }
         None => {
             println!("Element not found: {}", input);

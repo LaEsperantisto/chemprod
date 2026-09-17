@@ -68,7 +68,7 @@ pub fn run(input: &str) {
             println!("Name:           {}", isotope.element.name);
             println!("Symbol:         {}", isotope.element.symbol);
             println!("Atomic number:  {}", isotope.element.atomic_number);
-            println!("Isotope Mass:   {}", isotope.mass_number);
+            println!("Isotope Mass:   {}", isotope.nucleons());
             println!(
                 "Group:          {}",
                 isotope
