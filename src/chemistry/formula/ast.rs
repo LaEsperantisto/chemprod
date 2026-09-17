@@ -1,9 +1,10 @@
 use crate::cli::element::MultiIndexElementMap;
-use std::fmt::Debug;
+use std::{collections::HashMap, fmt::Debug};
 
 pub trait Formula: Debug {
     fn get_mass(&self, map: &MultiIndexElementMap) -> f64;
     fn get_charge(&self, map: &MultiIndexElementMap) -> i32;
+    fn get_elements(&self, map: &mut HashMap<String, usize>);
 }
 
 #[derive(Debug)]
@@ -29,6 +30,14 @@ impl Formula for FormulaGroup {
             .sum();
         group_charge * self.multiplier
     }
+
+    fn get_elements(&self, map: &mut HashMap<String, usize>) {
+        self.formulae.iter().for_each(|formula| {
+            for _ in 0..self.multiplier {
+                formula.get_elements(map)
+            }
+        });
+    }
 }
 
 #[derive(Debug)]
@@ -51,5 +60,13 @@ impl Formula for Symbol {
             .unwrap_or(0);
 
         (base_charge as i32) * self.multiplier
+    }
+
+    fn get_elements(&self, map: &mut HashMap<String, usize>) {
+        if map.contains_key(&self.symbol) {
+            *map.get_mut(&self.symbol).unwrap() += self.multiplier as usize;
+        } else {
+            map.insert(self.symbol.clone(), 1);
+        }
     }
 }

@@ -1,4 +1,9 @@
-use crate::{chemistry::formula::parser::Parser, cli::element::{Element, ElementFile, MultiIndexElementMap}};
+use std::collections::HashMap;
+
+use crate::{
+    chemistry::formula::parser::Parser,
+    cli::element::{ElementFile, MultiIndexElementMap},
+};
 
 pub fn run(formula: &str) {
     let mut parser = Parser::new(formula.to_string());
@@ -12,6 +17,14 @@ pub fn run(formula: &str) {
         map.insert(element);
     }
 
-    println!("Total relative mass: {}",tree.get_mass(&map));
-    println!("Overall charge: {}",tree.get_charge(&map));
+    let mut elements = HashMap::new();
+
+    println!("\nTotal relative mass: {}", tree.get_mass(&map));
+    println!("Overall charge: {}", tree.get_charge(&map));
+
+    println!("\nElement counts:");
+    tree.get_elements(&mut elements);
+    for (element, count) in elements.iter() {
+        println!("{}: {}{}", element, " ".repeat(2 - element.len()), count);
+    }
 }

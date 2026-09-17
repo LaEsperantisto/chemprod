@@ -7,15 +7,17 @@ pub struct Parser {
 
 impl Parser {
     pub fn new(text: String) -> Self {
-        Self {current:0,text: text.chars().collect()}
+        Self {
+            current: 0,
+            text: text.chars().collect(),
+        }
     }
 
     pub fn parse(&mut self) -> Box<dyn Formula> {
         self.group()
     }
 
-    fn formula(&mut self, peeked_next: char)-> Box<dyn Formula> {
-        
+    fn formula(&mut self, peeked_next: char) -> Box<dyn Formula> {
         if peeked_next == '(' {
             self.next();
             self.group()
@@ -28,7 +30,6 @@ impl Parser {
 
     fn symbol(&mut self) -> Box<dyn Formula> {
         let mut symbol = String::new();
-        
 
         // Consume the element symbol (e.g., 'O', 'Fe', 'Na')
         while let Some(next) = self.peek_next() {
@@ -61,10 +62,7 @@ impl Parser {
             string_multiplier.parse::<i32>().unwrap_or(1)
         };
 
-        Box::new(Symbol {
-            symbol,
-            multiplier,
-        })
+        Box::new(Symbol { symbol, multiplier })
     }
 
     fn group(&mut self) -> Box<dyn Formula> {
@@ -95,20 +93,19 @@ impl Parser {
             string_multiplier.parse::<i32>().unwrap_or(1)
         };
 
-        Box::new(FormulaGroup{
+        Box::new(FormulaGroup {
             formulae,
             multiplier,
         })
-        
     }
 
     fn peek_next(&mut self) -> Option<char> {
-        self.text.get(self.current).map(|c|{*c})
+        self.text.get(self.current).map(|c| *c)
     }
 
     fn next(&mut self) -> Option<char> {
         let output = self.peek_next();
-        self.current+=1;
+        self.current += 1;
         output
     }
 }
