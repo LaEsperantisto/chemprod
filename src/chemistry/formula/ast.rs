@@ -66,7 +66,7 @@ impl Formula for Symbol {
         if map.contains_key(&self.symbol) {
             *map.get_mut(&self.symbol).unwrap() += self.multiplier as usize;
         } else {
-            map.insert(self.symbol.clone(), 1);
+            map.insert(self.symbol.clone(), self.multiplier as usize);
         }
     }
 }
